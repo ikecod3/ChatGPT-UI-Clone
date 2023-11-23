@@ -1,0 +1,221 @@
+*,
+*::after,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Sogne;
+  src: url(/assets/fonts/TestSöhne-Buch.otf);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  margin: 0;
+  width: 100wh;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+#left-container,
+#right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 100vh;
+  border: none;
+}
+
+#left-container {
+  background-color: rgb(29, 19, 48);
+  color: rgb(210, 146, 255);
+  display: none;
+  position: relative;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+#pragraph-ideas {
+  /* filter: blur(1em); */
+  padding: inherit;
+  margin: inherit;
+  overflow: auto;
+}
+
+.reveal {
+  color: #0000;
+  background: linear-gradient(rgb(210, 146, 255) 0 0) no-repeat;
+  background-size: 0% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: reveal 2s 0.5s both;
+}
+
+.animate-text {
+  position: absolute;
+  transform: translate(0%, -20%);
+  animation: animate 15s infinite ease;
+}
+.animate-text p {
+  font-size: 24px;
+}
+
+.animate-text:nth-child() {
+  animation-delay: -15s;
+}
+.animate-text:nth-child(2) {
+  animation-delay: -12s;
+}
+.animate-text:nth-child(3) {
+  animation-delay: -9s;
+}
+.animate-text:nth-child(4) {
+  animation-delay: -6s;
+}
+.animate-text:nth-child(5) {
+  animation-delay: -3s;
+}
+.animate-text:nth-child(6) {
+  animation-delay: -1s;
+}
+
+/* keyframe is here */
+@keyframes reveal {
+  to {
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes animate {
+  0%,
+  5%,
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  30%,
+  80% {
+    filter: blur(20px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* styling right container */
+
+#right-container {
+  /* background-color: rgb(12, 9, 9); */
+  /* background-color: rgb(190, 145, 9); */
+  background: rgb(7, 5, 45);
+  background: linear-gradient(180deg, rgba(7, 5, 45, 1) 0%, rgb(9, 9, 9) 97%);
+  color: rgb(252, 252, 252);
+  width: 100%;
+}
+
+#right-container h2 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#right-container nav {
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  top: 20px;
+  left: 25px;
+}
+#right-container nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+}
+#right-container nav span {
+  color: #fff;
+  font-size: 28px;
+  border: none;
+  font-weight: 800;
+  margin-left: -5px;
+}
+
+.face-button {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  transition: 0.5s;
+}
+
+.face-button button {
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgb(39, 39, 241);
+  color: #fff;
+  border: none;
+  margin: 5px 0;
+}
+
+/* all media query is here */
+@media screen and (min-width: 768px) {
+  #left-container {
+    display: grid;
+    width: 50%;
+    justify-content: left;
+  }
+  #right-container {
+    width: 50%;
+  }
+  #right-container nav a {
+    color: rgb(210, 146, 255);
+  }
+  #right-container nav span {
+    color: rgb(210, 146, 255);
+  }
+}
+@media screen and (min-width: 1024px) {
+  #left-container {
+    display: grid;
+    width: 60%;
+    justify-content: left;
+  }
+  #right-container {
+    width: 40%;
+  }
+  #right-container nav a {
+    color: rgb(210, 146, 255);
+  }
+  #right-container nav span {
+    color: rgb(210, 146, 255);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .face-button {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* footer styling is here */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  position: absolute;
+  bottom: 0;
+  gap: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f3eaea;
+  padding: 10px;
+}
